@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  color: #f1f5f9;
+  background: linear-gradient(135deg, #0f172a, #111827, #172554);
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.container__conteudo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container__informacoes {
+  width: 100%;
+  padding: 45px;
+}
+
+.container__texto {
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 48px;
+  line-height: 1.2;
+  padding-bottom: 20px;
+  color: #60a5fa;
+}
+
+.container__texto-azul {
+  color: #60a5fa;
+}
+
+.texto__paragrafo {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.container__input {
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  outline: none;
+  background: #1e293b;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.container__input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.container__botoes {
+  display: flex;
+  gap: 15px;
+}
+
+.container__botao {
+  flex: 1;
+  min-height: 50px;
+  margin-top: 20px;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.container__botao:hover:not(:disabled) {
+  background: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.container__botao:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.container__botao:disabled {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.container__imagem-pessoa {
+  display: none;
+}
+
+p,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+      padding: 15px;
+  }
+
+  .container {
+      min-height: 350px;
+      border-radius: 15px;
+  }
+
+  .container__informacoes {
+      padding: 25px 20px;
+  }
+
+  h1 {
+      font-size: 34px;
+      padding-bottom: 15px;
+  }
+
+  .texto__paragrafo {
+      font-size: 16px;
+  }
+
+  .container__botoes {
+      flex-direction: column;
+      gap: 0;
+  }
+
+  .container__botao {
+      width: 100%;
+      margin-top: 12px;
+      font-size: 15px;
+  }
+
+  .container__input {
+      height: 55px;
+      font-size: 18px;
+  }
+}
+
+    </style>
+    <title>JS Game</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container__conteudo">
+            <div class="container__informacoes">
+                <div class="container__texto">
+                    <h1></h1>
+                    <p class="texto__paragrafo"></p>
+                </div>
+                <input type="number" min="1" max="10" class="container__input">
+                <div class="chute container__botoes">
+                    <button onclick="verificarChute()" class="container__botao">Chutar</button>
+                    <button onclick="reiniciarJogo()" id="reiniciar" class="container__botao" disabled>Novo jogo</button>
+                </div>
+            </div>
+            <img src="./img/ia.png" alt="Uma pessoa olhando para a esquerda" class="container__imagem-pessoa" />
+        </div>
+    </div>
+
+
+
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
